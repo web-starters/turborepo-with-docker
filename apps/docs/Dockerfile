@@ -47,6 +47,7 @@ COPY --from=installer /app/apps/docs/package.json .
 
 # Automatically leverage output traces to reduce image size 
 # https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=installer /app/apps/docs/public ./apps/docs/public
 COPY --from=installer --chown=nextjs:nodejs /app/apps/docs/.next/standalone ./
 COPY --from=installer --chown=nextjs:nodejs /app/apps/docs/.next/static ./apps/docs/.next/static
 
